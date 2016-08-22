@@ -67,6 +67,10 @@ export default (options = {}) => {
   // in viewport helper
 
   function inViewport(node) {
+    if (node.hasAttribute('data-layzr-hidden')) {
+      return false;
+    }
+
     const viewTop = prevLoc
     const viewBot = viewTop + windowHeight
 
